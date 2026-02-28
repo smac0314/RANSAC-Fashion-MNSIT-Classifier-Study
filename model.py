@@ -119,7 +119,7 @@ def plot_losses(train_losses, val_losses):
     plt.legend(fontsize=11)
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig('./part2_2.png', dpi=150)
+    plt.savefig('./output/part2_2.png', dpi=150)
     plt.show()
     
 train(model, trainloader, num_epoch)

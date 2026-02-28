@@ -26,7 +26,7 @@ def fit_homography(XY):
 
 
 def p1():
-    data = np.load('p1/transform.npy')
+    data = np.load('./output/p1/transform.npy')
     X = data[:,:2]
     Y = data[:,2:]
 
@@ -47,12 +47,12 @@ def p1():
     plt.scatter(Y[:,1],Y[:,0],c="green", label="Observed") #Y
     plt.scatter(Y_hat[:,1],Y_hat[:,0],c="blue", label="Y_hat")
     plt.legend()
-    plt.savefig('./part1_4.png')
+    plt.savefig('./output/part1_4.png')
     plt.close()
 
     case = 8
     for i in range(case):
-        XY = np.load('p1/points_case_'+str(i)+'.npy')
+        XY = np.load('./output/p1/points_case_'+str(i)+'.npy')
         H = fit_homography(XY)
         print(H)
         Y_H = homography_transform(XY[:,:2], H)
@@ -60,7 +60,7 @@ def p1():
         plt.scatter(XY[:,3],XY[:,2],c="green") #Y
         plt.scatter(Y_H[:,1],Y_H[:,0],c="blue") #Y_hat
         plt.title('Case '+ str(i))
-        plt.savefig('./case_'+str(i))
+        plt.savefig('./output/case_'+str(i)+'.png')
         plt.close()
 
 
